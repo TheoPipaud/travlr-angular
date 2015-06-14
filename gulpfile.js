@@ -32,8 +32,7 @@ gulp.task('clean-css', function (done) {
 
 gulp.task('styles', ['clean-css'], function () {
   return gulp.src([
-    './src/app/**/*.scss',
-    '!./src/app/**/_*.scss'
+    './src/app/**/*.scss'
   ])
     .pipe(g.sass({errLogToConsole: true}))
     .pipe(gulp.dest('./.tmp/css/'))

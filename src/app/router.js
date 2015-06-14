@@ -28,11 +28,26 @@ angular.module('moviesapp')
             $urlRouterProvider.otherwise("/home");
 
 
+console.log($stateProvider);
             $stateProvider
                 .state('home', {
                     url: '/home',
-                    controller: 'moviesCtrl',
-                    templateUrl: '/views/movies.html'
+                    controller: 'homeCtrl',
+                    templateUrl: '/views/home.html'
+                })
+                .state('login', {
+                    url: '/login',
+                    controller: 'loginCtrl',
+                    templateUrl: '/views/login.html'
+                }).state('dashboard', {
+                    url: '/dashboard',
+                    controller: 'dashboardCtrl',
+                    templateUrl: '/views/dashboard.html'
+                })
+                .state('register', {
+                    url: '/register',
+                    controller: 'registerCtrl',
+                    templateUrl: '/views/register.html'
                 });
 
         }

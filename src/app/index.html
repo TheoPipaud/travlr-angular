@@ -14,52 +14,7 @@
   </head>
   <body>
 
-  <header class="nav-bar" data-ng-controller="headerCtrl">
-
-      <div class="row header-wrapper">
-          <div class="logo col-md-3 col-sm-1 col-xs-1">
-              <a href="" class="pull-left">
-                  <img src="/images/logo4.svg"
-                       onerror="this.src='/images/menu/Group.png'"
-                       alt="Logo"
-                       class="logo-img"
-                       width="32px"/>
-                  <span class="hidden-xs hidden-sm">BeerTime.io</span>
-              </a>
-          </div>
-          <nav class="col-md-6 col-sm-6 col-xs-6">
-              <form
-                      method="GET"
-                      action="https://yts.to/search-movies"
-                      accept-charset="UTF-8"
-                      id="quick-search"
-                      name="quick-search">
-                  <div id="quick-search-container">
-                      <input
-                              id="quick-search-input"
-                              name="query"
-                              placeholder="Recherche rapide">
-                  </div>
-              </form>
-          </nav>
-
-
-          <div class="col-md-3 col-sm-2 col-xs-2">
-              <ul class="social-icons pull-right">
-                  <li>
-                      <a href="" class="hi-icon fa fa-facebook">
-                      </a>
-                  </li>
-                  <li>
-                      <a href="" class="hi-icon fa fa-twitter">
-                      </a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-
-
-  </header>
+    <div ng-include="'views/header.html'"></div>
 
     <!-- UI VIEW -->
     <div class="main-content">
@@ -75,6 +30,9 @@
     <script src="/router.js"></script>
     <script src="/controllers/headerController.js"></script>
     <script src="/controllers/moviesController.js"></script>
+    <script src="/controllers/registerController.js"></script>
+    <script src="/controllers/homeController.js"></script>
+
     <script src="/assets/ng-infinite-scroll.min.js"></script>
     <script src="/assets/quick-ng-repeat.js"></script>
     <script src="/assets/react.min.js"></script>

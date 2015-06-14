@@ -5,5 +5,6 @@ angular.module('moviesapp', [
   'moviesapp.controllers.header',
   'infinite-scroll',
   'react',
-  'QuickList'
+  'QuickList',
+  'moviesapp.controllers.register'
 ]);
