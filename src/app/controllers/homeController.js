@@ -6,7 +6,7 @@
 
 angular
     .module('moviesapp.controllers.movies', [])
-    .controller('moviesCtrl', [
+    .controller('homeCtrl', [
         '$scope', '$http',
         function($scope, $http) {
 
