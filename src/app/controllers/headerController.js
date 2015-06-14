@@ -8,7 +8,13 @@ angular
     .controller('headerCtrl', [
         '$scope',
         function($scope) {
-            console.log('headerCtrl');
-
+        	$scope.isLogged = false;
+            if(localStorage.token){
+            	$scope.isLogged = true;
+            	console.log('logged');
+            }else{
+            	$scope.isLogged = false;
+            	console.log('not logged');
+            }
         }
     ]);

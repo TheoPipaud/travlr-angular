@@ -1,0 +1,19 @@
+<form data-ng-submit="createActivity()">
+
+	<label for="title">Titre :</label>
+	<input type="text" name="title" id="title" data-ng-model="activity.title">
+	<label for="category">Catégorie</label>
+	<select name="category" id="category" data-ng-model="activity.category">
+		<option value="water">Eau</option>
+		<option value="ground">Terre</option>
+		<option value="air">Air</option>
+		<option value="snow">Neige</option>
+	</select>
+	<label for="description">Description :</label>
+	<textarea name="description" id="description" cols="30" rows="10" data-ng-model="activity.content"></textarea>
+	<!-- <label for="nb_places">Nombre de places disponibles :</label>
+	<input type="number" name="nb_places" data-ng-model="activity.np_places"> -->
+	<label for="price">Prix/place</label>
+	<input type="price" name="price" data-ng-model="activity.price">
+	<input type="submit" value="Créer l'activité"/>
+</form>

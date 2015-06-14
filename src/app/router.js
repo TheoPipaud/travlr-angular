@@ -48,6 +48,10 @@ console.log($stateProvider);
                     url: '/register',
                     controller: 'registerCtrl',
                     templateUrl: '/views/register.html'
+                }).state('activity', {
+                    url: '/activity',
+                    controller: 'activityCtrl',
+                    templateUrl: '/views/activity.html'
                 });
 
         }

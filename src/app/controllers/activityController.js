@@ -4,22 +4,20 @@
 'use strict';
 
 angular
-  .module('moviesapp.controllers.login', [])
-  .controller('loginCtrl', [
+  .module('moviesapp.controllers.activity', [])
+  .controller('activityCtrl', [
     '$scope', '$http', '$state',
     function($scope, $http, $state) {
-
-		$scope.user = {};
-
-        $scope.login = function() {
+    	$scope.activity = {};
+    	$scope.createActivity = function() {
+    		console.log($scope.activity);
         	$http
-        		.post('http://travlr.scalingo.io/auth/login', $scope.user)
+        		.post('http://travlr.scalingo.io/post', $scope.activity)
         		.then(function(data){
-        			localStorage.token = data.data.token;
         			$state.go('dashboard');
         		}, function(err){
         			console.log(err);
         		})
         }
     }
-  ]);
+]);

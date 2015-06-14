@@ -8,5 +8,6 @@ angular.module('moviesapp', [
   'moviesapp.controllers.login',
   'QuickList',
   'moviesapp.controllers.register',
-  'moviesapp.controllers.dashboard'
+  'moviesapp.controllers.dashboard',
+  'moviesapp.controllers.activity'
 ]);

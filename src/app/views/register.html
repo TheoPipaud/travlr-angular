@@ -1,5 +1,9 @@
-<form action="">
-	<input type="email" name="login" placeholder="login"/>
-	<input type="password" name="password" placeholder="password"/>
-	<input type="submit" value="se connecter"/>
+<form data-ng-submit="register()">
+	<input type="email" name="login" placeholder="login" data-ng-model="user.email"/>
+	<input 
+		type="password" 
+		name="password" 
+		data-ng-model="user.password"
+		placeholder="password"/>
+	<input type="submit" value="Créer un compte"/>
 </form>

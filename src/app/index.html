@@ -14,7 +14,10 @@
   </head>
   <body>
 
-    <div ng-include="'views/header.html'"></div>
+    <div ng-controller="headerCtrl">
+      <div ng-if="!isLogged" ng-include="'views/header.html'"></div>
+      <div ng-if="isLogged" ng-include="'views/header_logged.html'"></div>
+    </div>
 
     <!-- UI VIEW -->
     <div class="main-content">
@@ -34,6 +37,7 @@
     <script src="/controllers/homeController.js"></script>
     <script src="/controllers/loginController.js"></script>
     <script src="/controllers/dashboardController.js"></script>
+    <script src="/controllers/activityController.js"></script>
 
     <script src="/assets/ng-infinite-scroll.min.js"></script>
     <script src="/assets/quick-ng-repeat.js"></script>
