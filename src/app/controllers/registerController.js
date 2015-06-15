@@ -12,8 +12,7 @@ angular
         		$http
         			.post('http://travlr.scalingo.io/user', $scope.user)
         			.then(function(data){
-        				console.log(data.data.token);
-        				localStorage.token = data.data.token;
+        				localStorage.travlr_token = data.data.token;
         			}, function(err){
         				console.log(err);
         			})

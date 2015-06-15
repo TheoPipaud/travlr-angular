@@ -9,5 +9,8 @@ angular.module('moviesapp', [
   'QuickList',
   'moviesapp.controllers.register',
   'moviesapp.controllers.dashboard',
-  'moviesapp.controllers.activity'
+  'moviesapp.controllers.singledashboard',
+  'moviesapp.controllers.activity',
+  'moviesapp.controllers.general',
+  'app.interceptors.auth'
 ]);

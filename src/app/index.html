@@ -8,11 +8,11 @@
 
 
     <!-- FONTS-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"/>
+      <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"/>
       <link href='http://fonts.googleapis.com/css?family=Arimo:400,700,400italic' rel='stylesheet' type='text/css'>
-      <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> -->
   </head>
-  <body>
+  <body ng-controller="generalCtrl">
 
     <div ng-controller="headerCtrl">
       <div ng-if="!isLogged" ng-include="'views/header.html'"></div>
@@ -31,6 +31,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.14/angular-ui-router.min.js"></script>
     <script src="/app.js"></script>
     <script src="/router.js"></script>
+    <script src="/interceptors/AuthInterceptor.js"></script>
     <script src="/controllers/headerController.js"></script>
     <script src="/controllers/moviesController.js"></script>
     <script src="/controllers/registerController.js"></script>
@@ -38,6 +39,8 @@
     <script src="/controllers/loginController.js"></script>
     <script src="/controllers/dashboardController.js"></script>
     <script src="/controllers/activityController.js"></script>
+    <script src="/controllers/generalController.js"></script>
+    <script src="/controllers/dashboardSingleController.js"></script>
 
     <script src="/assets/ng-infinite-scroll.min.js"></script>
     <script src="/assets/quick-ng-repeat.js"></script>

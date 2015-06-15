@@ -24,11 +24,13 @@ angular.module('moviesapp')
             $httpProvider.defaults.useXDomain = true;
             delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
+            $httpProvider.interceptors.push('AuthInterceptor');
+            
             // Send to login if the URL was not found
             $urlRouterProvider.otherwise("/home");
 
 
-console.log($stateProvider);
+        console.log($stateProvider);
             $stateProvider
                 .state('home', {
                     url: '/home',
@@ -42,7 +44,12 @@ console.log($stateProvider);
                 }).state('dashboard', {
                     url: '/dashboard',
                     controller: 'dashboardCtrl',
-                    templateUrl: '/views/dashboard.html'
+                    templateUrl: '/views/dashboard_list.html'
+                })
+                .state('dashboardSingle', {
+                    url: '/dashboard-single/:id',
+                    controller: 'dashboardSingleCtrl',
+                    templateUrl: '/views/dashboard_single.html'
                 })
                 .state('register', {
                     url: '/register',
