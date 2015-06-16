@@ -1,5 +1,13 @@
-<header class="nav-bar" data-ng-controller="headerCtrl">
-  <a ui-sref="home">TRAVLR</a>
-  <a ng-click="logout()">logout</a>
-  <a ui-sref="dashboard">dashboard</a>
-</header>
+<div class="left">
+	<a ui-sref="home">TRAVLR</a>
+</div>
+<div class="right">
+	<div class="my-account" ng-mouseenter="showNavMenu()">
+		<div class="top"><img src="{{me.avatar}}" alt=""><span>{{me.firstName}}</span></div>
+		<div class="wrapper">
+			<a ui-sref="dashboard">Mon tableau de bord</a>
+			<a href="">Proposer une activité</a>
+			<a ng-click="logout()">Se déconnecter</a>
+		</div>
+	</div>
+</div>

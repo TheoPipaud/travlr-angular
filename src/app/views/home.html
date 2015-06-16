@@ -1,3 +1,48 @@
-<div class="home">
-	home
+<div id="home">
+    <header id="nav-bar" class="clearfix" ng-if="!isLogged" ng-include="'views/header.html'"></header>
+    <header id="nav-bar" class="clearfix" ng-if="isLogged" ng-include="'views/header_logged.html'"></header>
+	<section class="sct1">
+		<h1 class="centered"><strong>Partout</strong> où vous allez<br>il y a quelqu'un pour vous</h1>
+		<div class="fast-search">
+			<form action="">
+				<input type="text" class="insert-input" placeholder="Où ?">
+				<input type="text" class="insert-input" placeholder="Activité">
+				<input type="date" class="insert-input" class="date">
+				<input type="submit" value="Rechercher une activité">
+			</form>
+		</div>
+	</section>
+	<section class="sct2">
+		<h2 class="basic-title">Où voulez-vous aller ?</h2>
+		<ul class="dest-list clearfix container">
+			<div class="left clearfix">
+				<li class="mr20 mb20" style="background-image: url(images/temp/city.jpg)">
+					<h3 class="city">Cuba</h3>
+				</li>
+				<li class="mb20" style="background-image: url(images/temp/city.jpg)">
+					<h3 class="city">Cuba</h3>
+				</li>
+				<li class="mr20" style="background-image: url(images/temp/city.jpg)">
+					<h3 class="city">Cuba</h3>
+				</li>
+				<li style="background-image: url(images/temp/city.jpg)">
+					<h3 class="city">Cuba</h3>
+				</li>
+			</div>
+			<div class="right">
+				<li style="background-image: url(images/temp/city.jpg)">
+					<h3 class="city">Paris</h3>
+				</li>
+			</div>
+		</ul>
+	</section>
+	<section class="sct3">
+		<h2 class="basic-title">Meilleures activités autour de vous</h2>
+		<ul class="posts-list clearfix container">
+			<li ng-repeat="post in posts" ng-include="'views/post.html'">
+				
+			</li>
+		</ul>
+	</section>
+	<footer>©travlr 2015</footer>
 </div>

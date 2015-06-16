@@ -280,10 +280,10 @@ function dist (ext, name, opt) {
 
 gulp.task('csslint', ['styles'], function () {
     return cssFiles()
-        .pipe(g.cached('csslint'))
-        .pipe(g.csslint('./.csslintrc'))
-        .on('error', gutil.log)
-        .pipe(g.csslint.reporter());
+        // .pipe(g.cached('csslint'))
+        // .pipe(g.csslint('./.csslintrc'))
+        // .on('error', gutil.log)
+        // .pipe(g.csslint.reporter());
 });
 
 

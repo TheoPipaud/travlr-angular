@@ -8,6 +8,9 @@ angular
     .controller('headerCtrl', [
         '$scope',
         function($scope) {
-        	
+        	$scope.showNavMenu = function(){
+        		console.log('hover');
+        		$('#nav-bar .my-account').addClass('active');
+        	}
         }
     ]);

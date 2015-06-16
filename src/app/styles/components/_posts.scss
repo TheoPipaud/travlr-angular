@@ -1,0 +1,89 @@
+.posts-list{
+	li{
+		float: left;
+		width: 285px;
+		display: block;
+		height: 290px;
+		overflow: hidden;
+		border-radius: 3px;
+		margin-bottom: 20px;
+		margin-right: 20px;
+		position: relative;
+		box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+		.content{
+			background: white;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 88px;
+			width: 100%;
+			padding: 14px 20px;
+			box-sizing: border-box;
+			color: $black;
+			.title{
+				font-weight: 700;
+				font-size: 1rem;
+				display: block;
+				margin-bottom: 5px;
+			}
+			.bottom{
+				.profil-pict{
+					display: block;
+					height: 32px;
+					width: 32px;
+					border-radius: 32px;
+					float: left;
+					margin-right: 10px;
+				}
+				.subtitle{
+					font-weight: 400;
+					font-size: 0.875rem;
+					display: block;
+				}
+				.rate{
+					display: block;
+					.stars{
+						width: 75px;
+						display: inline-block;
+						height: 10px;
+						vertical-align: top;
+						margin-right: 5px;
+						margin-top: 2px;
+					}
+					.reco{
+						font-size: 0.625rem;
+						vertical-align: top;
+						display: inline-block;
+						margin-top: 1px;
+					}
+				}
+			}
+		}
+		.illus{
+			height: 202px;
+			width: 100%;
+			display: block;
+			background-position: center center;
+			background-size: cover;
+		}
+		.price{
+			display: block;
+			height: 42px;
+			width: 42px;
+			border-radius: 42px;
+			background: $green;
+			position: absolute;
+			top: 15px;
+			left: 20px;
+			color: white;
+			line-height: 42px;
+			text-align: center;
+			font-weight: 600;
+			font-size: 0.75rem;
+			box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+		}
+	}
+	&>li:nth-child(4n){
+		margin-right: 0;
+	}
+}

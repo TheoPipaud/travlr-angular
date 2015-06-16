@@ -1,2 +1,13 @@
-@import "styles/base";
-@import "styles/header";
+@import "styles/base/fonts";
+@import "styles/base/normalize";
+@import "styles/base/reset";
+
+@import "styles/utils";
+@import "styles/global";
+
+@import "styles/components/header";
+@import "styles/components/footer";
+@import "styles/components/posts";
+
+@import "styles/pages/home";
+@import "styles/pages/dashboard_list";
