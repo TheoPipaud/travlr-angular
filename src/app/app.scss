@@ -2,9 +2,10 @@
 @import "styles/base/normalize";
 @import "styles/base/reset";
 
-@import "styles/components/header";
-
 @import "styles/utils";
 @import "styles/global";
+
+@import "styles/components/header";
+@import "styles/components/footer";
 
 @import "styles/pages/home";
