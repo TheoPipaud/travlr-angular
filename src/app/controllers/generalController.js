@@ -10,6 +10,7 @@ angular
     function($scope, $state, $http) {
       $scope.isLogged = false;
       $scope.user = {};
+      $scope.me = {};
 
       $scope.logout = function(){
       	localStorage.removeItem("travlr_token");
@@ -23,7 +24,7 @@ angular
       		.post(config.api_url+'/auth/login', $scope.user)
       		.then(function(data){
       			localStorage.travlr_token = data.data.token;
-                  $scope.isLogged = true;
+            $scope.isLogged = true;
       			$state.go('dashboard');
       		}, function(err){
       			console.log(err);
@@ -32,11 +33,21 @@ angular
       
       if(localStorage.travlr_token){
       	$scope.isLogged = true;
+        $scope.user_id = JSON.parse(localStorage.travlr_token).id;
       	console.log('logged');
       }else{
       	$scope.isLogged = false;
       	console.log('not logged');
       }
+
+
+      $http
+        .get(config.api_url+'/user/'+$scope.user_id)
+        .then(function(response){
+          $scope.me = response.data;
+        }, function(err){
+          console.log(err);
+        });
 
     }
   ]);

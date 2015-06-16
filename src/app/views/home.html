@@ -1,6 +1,6 @@
 <div id="home">
-    <header  class="nav-bar clearfix" ng-if="!isLogged" ng-include="'views/header.html'"></header>
-    <header class="nav-bar clearfix" ng-if="isLogged" ng-include="'views/header_logged.html'"></header>
+    <header id="nav-bar" class="clearfix" ng-if="!isLogged" ng-include="'views/header.html'"></header>
+    <header id="nav-bar" class="clearfix" ng-if="isLogged" ng-include="'views/header_logged.html'"></header>
 	<section class="sct1">
 		<h1 class="centered"><strong>Partout</strong> où vous allez<br>il y a quelqu'un pour vous</h1>
 		<div class="fast-search">
@@ -13,7 +13,7 @@
 		</div>
 	</section>
 	<section class="sct2">
-		<h2 class="basic-title">Où partez-vous ?</h2>
+		<h2 class="basic-title">Où voulez-vous aller ?</h2>
 		<ul class="dest-list clearfix container">
 			<div class="left clearfix">
 				<li class="mr20 mb20" style="background-image: url(images/temp/city.jpg)">
@@ -39,65 +39,8 @@
 	<section class="sct3">
 		<h2 class="basic-title">Meilleures activités autour de vous</h2>
 		<ul class="posts-list clearfix container">
-			<li>
-				<span class="illus" style="background-image: url(images/temp/city.jpg)"></span>
-				<span class="price">550€</span>
-				<div class="content">
-					<h3 class="title">Pêche à la mouche</h3>
-					<div class="bottom">
-						<img src="images/temp/profil.jpg" class="profil-pict" alt="">
-						<h4 class="subtitle">Organisé par Jean</h4>
-						<div class="rate">
-							<img src="images/temp/stars.jpg" alt="" class="stars">
-							<span class="reco">- 23 recommendations</span>
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<span class="illus" style="background-image: url(images/temp/city.jpg)"></span>
-				<span class="price">550€</span>
-				<div class="content">
-					<h3 class="title">Pêche à la mouche</h3>
-					<div class="bottom">
-						<img src="images/temp/profil.jpg" class="profil-pict" alt="">
-						<h4 class="subtitle">Organisé par Jean</h4>
-						<div class="rate">
-							<img src="images/temp/stars.jpg" alt="" class="stars">
-							<span class="reco">- 23 recommendations</span>
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<span class="illus" style="background-image: url(images/temp/city.jpg)"></span>
-				<span class="price">550€</span>
-				<div class="content">
-					<h3 class="title">Pêche à la mouche</h3>
-					<div class="bottom">
-						<img src="images/temp/profil.jpg" class="profil-pict" alt="">
-						<h4 class="subtitle">Organisé par Jean</h4>
-						<div class="rate">
-							<img src="images/temp/stars.jpg" alt="" class="stars">
-							<span class="reco">- 23 recommendations</span>
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<span class="illus" style="background-image: url(images/temp/city.jpg)"></span>
-				<span class="price">550€</span>
-				<div class="content">
-					<h3 class="title">Pêche à la mouche</h3>
-					<div class="bottom">
-						<img src="images/temp/profil.jpg" class="profil-pict" alt="">
-						<h4 class="subtitle">Organisé par Jean</h4>
-						<div class="rate">
-							<img src="images/temp/stars.jpg" alt="" class="stars">
-							<span class="reco">- 23 recommendations</span>
-						</div>
-					</div>
-				</div>
+			<li ng-repeat="post in posts" ng-include="'views/post.html'">
+				
 			</li>
 		</ul>
 	</section>

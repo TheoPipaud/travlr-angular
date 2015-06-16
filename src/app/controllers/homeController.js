@@ -10,9 +10,14 @@ angular
         '$scope', '$http',
         function($scope, $http) {
 
-            $scope.movies = [];
-            console.log('homeController');
-
+            $scope.posts = [];
+            
+            $http.get(config.api_url+'/post/feed').then(function(response) {
+				console.log(response.data);
+				$scope.posts = response.data;
+			}, function(err) {
+				return console.log(err);
+			});
 
         }
 

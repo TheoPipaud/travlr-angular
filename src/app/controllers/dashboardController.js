@@ -6,11 +6,10 @@
 angular
   .module('moviesapp.controllers.dashboard', [])
   .controller('dashboardCtrl', [
-    '$scope', '$http',
-    function($scope, $http) {
-    
-    	$scope.activities = [];
-
+    '$scope', '$http', '$state',
+    function($scope, $http, $state) {
+      $scope.activities = [];
+    	
     	$http.get(config.api_url+'/post').then(function(response) {
     		console.log('response', response.data);
         $scope.activities = response.data;

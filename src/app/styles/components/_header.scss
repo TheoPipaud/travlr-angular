@@ -1,4 +1,4 @@
-.nav-bar{
+#nav-bar{
   height: 110px;
   width: 100%;
   color: white;
@@ -24,21 +24,75 @@
   .right{
     float: right;
     font-size: 0.750rem;
+    height: 100%;
     a{
       margin-left: 30px;
       height: 30px;
       line-height: 30px;
+    }
+    .my-account{
+      display: inline-block;
+      height: 38px;
+      overflow: hidden;
+      vertical-align: middle;
+      cursor: pointer;
+      .top{
+        height: 38px;
+        line-height: 38px;
+        display: block;
+        text-align: right;
+        img{
+          height: 38px;
+          width: 38px;
+          border-radius: 38px;
+          margin-right: 10px;
+        }
+        span{
+          vertical-align: top;
+          line-height: 38px;
+          height: 38px;
+          display: inline-block;
+          &:after{
+            content: "";
+            height: 0;
+            width: 0;
+            display: inline-block;
+            border: 5px solid transparent;
+            border-top-color: white;
+            vertical-align: middle;
+            margin-top: 4px;
+            margin-left: 10px;
+          }
+        }
+      }
+      .wrapper{
+        margin-top: 10px;
+        a{
+          display: block;
+          background: rgba(255,255,255,0.1);
+          padding: 2px 20px;
+          font-weight: 400;
+          &:hover{
+            background: rgba(255,255,255,0.2);
+          }
+        }
+      }
+      &.active{
+        overflow: visible;
+      }
     }
   }
   a{
     color: white;
     display: inline-block;
     font-size: 12px;
+    cursor: pointer;
     text-decoration: none;
     &.btn{
       background: $blue;
       border-radius: 3px;
       padding: 0 10px;
+      color: white;
     }
   }
 }
