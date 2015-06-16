@@ -6,8 +6,10 @@
 angular
   .module('moviesapp.controllers.dashboard', [])
   .controller('dashboardCtrl', [
-    '$scope', '$http',
-    function($scope, $http) {
+    '$scope', '$http', 'post',
+    function($scope, $http, post) {
+
+        $scope.isOpen = false;
     
     	$scope.activities = [];
 
