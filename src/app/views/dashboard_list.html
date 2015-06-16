@@ -1,6 +1,6 @@
 <a ui-sref="activity">Créer une activité</a>
 <ul>
 	<li data-ng-repeat="activity in activities">
-		<h2>{{ activity.title }}</h2>
+		<a href="" ui-sref="dashboardSingle({ id: activity.id })">{{ activity.title }}</a>
 	</li>
 </ul>

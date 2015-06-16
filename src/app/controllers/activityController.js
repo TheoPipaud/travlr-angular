@@ -12,7 +12,7 @@ angular
     	$scope.createActivity = function() {
     		console.log($scope.activity);
         	$http
-        		.post('http://travlr.scalingo.io/post', $scope.activity)
+        		.post(config.api_url+'/post', $scope.activity)
         		.then(function(data){
         			$state.go('dashboard');
         		}, function(err){

@@ -11,7 +11,7 @@ angular
     
     	$scope.activities = [];
 
-    	$http.get('http://travlr.scalingo.io/post').then(function(response) {
+    	$http.get(config.api_url+'/post').then(function(response) {
     		console.log('response', response.data);
 
         	$scope.activities = response.data;

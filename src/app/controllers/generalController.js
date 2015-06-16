@@ -20,7 +20,7 @@ angular
 
       $scope.login = function() {
       	$http
-      		.post('http://travlr.scalingo.io/auth/login', $scope.user)
+      		.post(config.api_url+'/auth/login', $scope.user)
       		.then(function(data){
       			localStorage.travlr_token = data.data.token;
                   $scope.isLogged = true;

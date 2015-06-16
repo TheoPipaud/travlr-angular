@@ -10,7 +10,7 @@ angular
 
         	$scope.register = function() {
         		$http
-        			.post('http://travlr.scalingo.io/user', $scope.user)
+        			.post(config.api_url+'/user', $scope.user)
         			.then(function(data){
         				localStorage.travlr_token = data.data.token;
         			}, function(err){
