@@ -1,3 +1,5 @@
-<div class="home">
-	home
+<div id="home">
+    <header  class="nav-bar" ng-if="!isLogged" ng-include="'views/header.html'"></header>
+    <header class="nav-bar" ng-if="isLogged" ng-include="'views/header_logged.html'"></header>
+	<section class="sct1"></section>
 </div>

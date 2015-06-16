@@ -13,12 +13,10 @@ angular
 
     	$http.get(config.api_url+'/post').then(function(response) {
     		console.log('response', response.data);
-
-        	$scope.activities = response.data;
- 
-
-        }, function(err) {
-            return console.log(err);
-        });
+        $scope.activities = response.data;
+      }, function(err) {
+        return console.log(err);
+      });
+      
     }
   ]);

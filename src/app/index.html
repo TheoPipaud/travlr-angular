@@ -14,15 +14,8 @@
   </head>
   <body ng-controller="generalCtrl">
 
-    <div ng-controller="headerCtrl">
-      <div ng-if="!isLogged" ng-include="'views/header.html'"></div>
-      <div ng-if="isLogged" ng-include="'views/header_logged.html'"></div>
-    </div>
-
     <!-- UI VIEW -->
-    <div class="main-content">
-        <ui-view></ui-view>
-    </div>
+      <ui-view class="ng-global"></ui-view>
 
 
     <script src="urls.js"></script>

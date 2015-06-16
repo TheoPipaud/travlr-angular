@@ -1,2 +1,8 @@
-<h1>{{ activity.title }}</h1>
-<p>{{ activity.content }}</p>
+<div class="dashboard-single">
+	<div ng-controller="headerCtrl">
+      <div ng-if="!isLogged" ng-include="'views/header.html'"></div>
+      <div ng-if="isLogged" ng-include="'views/header_logged.html'"></div>
+    </div>
+    <h1>{{ activity.title }}</h1>
+	<p>{{ activity.content }}</p>
+</div>
