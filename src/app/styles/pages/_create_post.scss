@@ -1,0 +1,130 @@
+#create-activity{
+	.sidebar{
+		position: fixed;
+		left: 0;
+		height: 100%;
+		width: 250px;
+		background: $grey-light;
+		padding-top: 100px;
+		top: 0;
+		a{
+			display: block;
+			color: $black;
+			width: 100%;
+			padding-left: 20px;
+			height: 60px;
+			line-height: 60px;
+			text-decoration: none;
+			box-sizing: border-box;
+			&:hover{
+				background: rgba(255,255,255,0.6);
+			}
+		}
+	}
+	.content{
+		width: 100%;
+		box-sizing: border-box;
+		padding-left: 250px;
+		padding-top: 60px;
+		form{
+			display: block;
+			margin: 50px auto;
+			width: 70%;
+			.top{
+				color: $black;
+				padding-bottom: 20px;
+				.basic-title{
+					margin-bottom: 20px;
+					text-align: left;
+				}
+				.more-desc{
+					font-size: 1rem;
+				}
+			}
+			.middle{
+				padding: 40px 0;
+				border-bottom: 2px solid $grey-light;
+				border-top: 2px solid $grey-light;
+				label, .label{
+					display: block;
+					font-weight: 600;
+					margin: 20px 0 10px 0;
+				}
+				input[type="text"], input[type="price"], input[type="number"], textarea{
+					background: $grey-light;
+					border-radius: 3px;
+					border: none;
+					padding: 5px 10px;
+					font-size: 0.875rem;
+				}
+				.checkboxes{
+					li{
+						width: 25%;
+						float: left;
+						margin-bottom: 5px;
+						input{
+							margin-right: 10px;
+						}
+					}
+				}
+				input[type="text"]{
+					height: 22px;
+				}
+				textarea{
+					height: 100px;
+				}
+				.full-w{
+					width: 100%;
+				}
+				.radio-boxes{
+					text-align: center;
+					div{
+						display: inline-block;
+						vertical-align: top;
+						width: 180px;
+						height: 200px;
+						background: $grey-light;
+						color: $black;
+						cursor: pointer;
+						line-height: 200px;
+						text-align: center;
+						margin: 20px 20px;
+						box-sizing: border-box;
+						&.active{
+							border: 10px solid $black;
+							line-height: 180px;
+						}
+						input{
+							opacity: 0;
+							position: absolute;
+						}
+					}
+				}
+			}
+			.bottom{
+				margin-top: 20px;
+				.back{
+					float: left;
+					font-size: 0.875rem;
+					text-decoration: none;
+					color: $black;
+					font-weight: 600;
+				}
+				.next{
+					font-size: 0.875rem;
+					cursor: pointer;
+					text-decoration: none;
+					height: 30px;
+					line-height: 30px;
+					background: #757fff;
+					border-radius: 3px;
+					padding: 0 10px;
+					color: white;
+					float: right;
+					width: 90px;
+					text-align: center;
+				}
+			}
+		}
+	}
+}

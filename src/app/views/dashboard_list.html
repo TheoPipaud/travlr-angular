@@ -1,6 +1,6 @@
 <div id="dashboard-list">
-	<header id="nav-bar" class="clearfix" ng-if="!isLogged" ng-include="'views/header.html'"></header>
-    <header id="nav-bar" class="clearfix" ng-if="isLogged" ng-include="'views/header_logged.html'"></header>
+	<header id="nav-bar" class="clearfix" ng-if="!isLogged" ng-include="'views/header.html'" ng-controller="headerCtrl"></header>
+    <header id="nav-bar" class="clearfix" ng-if="isLogged" ng-include="'views/header_logged.html'" ng-controller="headerCtrl"></header>
 	<a ui-sref="activity">Créer une activité</a>
 	<ul>
 		<li data-ng-repeat="activity in activities">
