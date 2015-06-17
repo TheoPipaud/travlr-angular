@@ -10,5 +10,6 @@ angular.module('moviesapp', [
   'moviesapp.controllers.singledashboard',
   'moviesapp.controllers.activity',
   'moviesapp.controllers.general',
+  'moviesapp.controllers.chat',
   'app.interceptors.auth'
 ]);
