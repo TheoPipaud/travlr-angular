@@ -1,40 +1,43 @@
 <div id="sidebar" class="nav-collapse " style=" outline: none;" tabindex="5000">
     <!-- sidebar menu start-->
+    <div>
 
-    <section class="travlr">
-        <h3>Voyageur</h3>
+        <section class="travlr">
+            <h3>Voyageur</h3>
 
-        <nav>
-            <ul>
-                <li><a href=""><i class="fa fa-search"></i> Trouver une activité</a></li>
-                <li><a href=""><i class="fa fa-street-view"></i> Mes réservations</a></li>
-            </ul>
-        </nav>
-
-
-    </section>
+            <nav>
+                <ul>
+                    <li><a href=""><i class="fa fa-search"></i> Trouver une activité</a></li>
+                    <li><a href=""><i class="fa fa-street-view"></i> Mes réservations</a></li>
+                </ul>
+            </nav>
 
 
-    <section class="guide">
-        <h3>Guide</h3>
+        </section>
 
-        <nav>
-            <ul>
-                <li><a href=""><i class="fa fa-edit"></i> Publier une annonce</a></li>
-                <li><a href=""><i class="fa fa-calendar"></i> Mes activités</a></li>
-            </ul>
-        </nav>
-    </section>
 
-    <section class="chat">
-        <h3>Discussions ({{posts.length}})</h3>
-        <nav>
-            <ul>
-                <li ng-repeat="post in posts"><a href="">{{post.title}}</a></li>
-            </ul>
-        </nav>
+        <section class="guide">
+            <h3>Guide</h3>
 
-    </section>
+            <nav>
+                <ul>
+                    <li><a href=""><i class="fa fa-edit"></i> Publier une annonce</a></li>
+                    <li><a href=""><i class="fa fa-calendar"></i> Mes activités</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="chat">
+            <h3>Discussions ({{posts.length}})</h3>
+            <nav>
+                <ul>
+                    <li ng-repeat="post in posts"><a href="">{{post.title}}</a></li>
+                </ul>
+            </nav>
+
+        </section>
+        
+    </div>
 
     <!-- sidebar menu end-->
 </div>
