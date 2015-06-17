@@ -11,8 +11,9 @@ angular
     	$scope.activity = [];
       $scope.posts = [];
 
-      $http.get(config.api_url+'/post/'+$stateParams.id).then(function(response) {
+      $http.get(config.api_url+'/post/'+$stateParams.id+'?populate=owner').then(function(response) {
         $scope.activity = response.data;
+        console.log(response.data);
       }, function(err) {
         return console.log(err);
       });
