@@ -3,16 +3,16 @@
 	<h2 class="more-desc">Vous ne partagez pas seulement vos loisirs, vous partagez votre quartier. Les voyageurs se serviront de cette information pour trouver une activité proche d'eux.</h2>
 </div>
 <div class="middle">
-	<label for="title">Pays :</label>
-	<input type="text" class="full-w" name="country" id="country" data-ng-model="activity.country">
-	<label for="title">Ville :</label>
-	<input type="text" class="full-w" name="city" id="city" data-ng-model="activity.city">
-	<label for="title">Numéro et nom de rue :</label>
-	<input type="text" class="full-w" name="street" id="street" data-ng-model="activity.street">
-	<label for="title">Code postal :</label>
-	<input type="number" class="full-w" name="zipcode" id="zipcode" data-ng-model="activity.zipcode">
+	<label for="country">Pays :</label>
+	<input type="text" class="full-w" name="country" id="country" data-ng-model="activity.country" ng-init="initInput('country')">
+	<label for="city">Ville :</label>
+	<input type="text" class="full-w" name="city" id="city" data-ng-model="activity.city" ng-init="initInput('city')">
+	<label for="address">Numéro et nom de rue :</label>
+	<input type="text" class="full-w" name="address" id="street" data-ng-model="activity.address" ng-init="initInput('address')">
+	<label for="zipcode">Code postal :</label>
+	<input type="number" class="full-w" name="zipcode" id="zipcode" data-ng-model="activity.zipcode" ng-init="initInput('zipcode')">
 </div>
 <div class="bottom clearfix">
-	<a href="" class="back">Retour</a>
+	<a ui-sref="activity.availability" class="back">Retour</a>
 	<a ng-click="submitPart('activity.price', 3)" class="next">Suivant</a>
 </div>
