@@ -25,12 +25,12 @@ angular.module('moviesapp')
             delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
             $httpProvider.interceptors.push('AuthInterceptor');
-            
+
             // Send to login if the URL was not found
             $urlRouterProvider.otherwise("/home");
 
 
-        console.log($stateProvider);
+
             $stateProvider
                 .state('home', {
                     url: '/home',
