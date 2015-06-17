@@ -4,78 +4,18 @@
 </div>
 <div class="middle">
 	<label for="title">Titre de l'activité :</label>
-	<input type="text" class="full-w" name="title" id="title" data-ng-model="activity.title">
-	<label for="description">Description de l'activité :</label>
-	<textarea class="full-w" name="description" id="description" cols="30" rows="10" data-ng-model="activity.content"></textarea>
-	<label for="categ_verb">Selectionnez les catégories (5max) :</label>
+	<input type="text" class="full-w" name="title" id="title" data-ng-model="activity.title" ng-init="initInput('title')">
+	<label for="content">Description de l'activité :</label>
+	<textarea class="full-w" name="content" id="content" cols="30" rows="10" data-ng-model="activity.content" ng-init="initInput('content')"></textarea>
+	<label for="categories">Selectionnez les catégories (5max) :</label>
 	<ul class="checkboxes clearfix">
-		<li>
-			<input type="checkbox" value="water">Courir
-		</li>
-		<li>
-			<input type="checkbox" value="ground">Pêcher
-		</li>
-		<li>
-			<input type="checkbox" value="air">Plonger
-		</li>
-		<li>
-			<input type="checkbox" value="Parler">Parler
-		</li>
-		<li>
-			<input type="checkbox" value="Nager">Nager
-		</li>
-		<li>
-			<input type="checkbox" value="Manger">Manger
-		</li>
-		<li>
-			<input type="checkbox" value="Grimper">Grimper
-		</li>
-		<li>
-			<input type="checkbox" value="Surfer">Surfer
-		</li>
-		<li>
-			<input type="checkbox" value="Naviguer">Naviguer
-		</li>
-		<li>
-			<input type="checkbox" value="Glisser">Glisser
-		</li>
-		<li>
-			<input type="checkbox" value="Boire">Boire
-		</li>
-		<li>
-			<input type="checkbox" value="Chiller">Chiller
-		</li>
-		<li>
-			<input type="checkbox" value="Marcher">Marcher
-		</li>
-		<li>
-			<input type="checkbox" value="Sauter">Sauter
-		</li>
-		<li>
-			<input type="checkbox" value="Voler">Voler
-		</li>
-		<li>
-			<input type="checkbox" value="Geeker">Geeker
-		</li>
-		<li>
-			<input type="checkbox" value="Danser">Danser
-		</li>
-		<li>
-			<input type="checkbox" value="Jouer">Jouer
-		</li>
-		<li>
-			<input type="checkbox" value="Rouler">Rouler
-		</li>
-		<li>
-			<input type="checkbox" value="Dormir">Dormir
+		<li ng-repeat="category in categories">
+			<input type="checkbox" value="water" ng-click="category.selected = ! category.selected">{{category.name}}
 		</li>
 	</ul>
 	<label for="nb_places">Nombre de places disponibles :</label>
-	<input type="number" name="nb_places" data-ng-model="activity.np_places">
-	<label for="nb_places_min">Nombre de participants minimum requis :</label>
-	<input type="number" name="nb_places_min" data-ng-model="activity.nb_places_min">
+	<input type="number" name="maxPersons" data-ng-model="activity.maxPersons" ng-init="initInput('maxPersons')">
 </div>
 <div class="bottom clearfix">
-	<a href="" class="back">Retour</a>
 	<a ng-click="submitPart('activity.availability', 1)" class="next">Suivant</a>
 </div>

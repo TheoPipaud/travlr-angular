@@ -4,11 +4,11 @@
 </div>
 <div class="middle">
 	<label for="price">Prix/personne :</label>
-	<input type="number" name="price" data-ng-model="activity.price">
-	<label for="duration">Durée (en h):</label>
-	<input type="number" name="duration" data-ng-model="activity.duration">
+	<input type="number" name="price" data-ng-model="activity.price" ng-init="initInput('price')">
+	<label for="duration">Durée (en h) :</label>
+	<input type="number" name="duration" data-ng-model="activity.duration" ng-init="initInput('duration')">
 </div>
 <div class="bottom clearfix">
-	<a href="" class="back">Retour</a>
-	<a href="" class="next">Suivant</a>
+	<a ui-sref="activity.place" class="back">Retour</a>
+	<a ng-click="submitPart('validate', 4)" class="next">Valider</a>
 </div>
