@@ -9,11 +9,5 @@ angular
     '$scope', '$http', '$sailsSocket',
     function($scope, $http, $sailsSocket) {
 
-        $scope.isOpen = false;
-
-    	$scope.activities = [];
-
-
-
     }
   ]);

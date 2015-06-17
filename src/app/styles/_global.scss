@@ -3,6 +3,7 @@ html, body, .ng-global{
 	width: 100%;
 	display: block;
 	font-family: $source;
+	-webkit-font-smoothing: antialiased;
 }
 
 .basic-title{

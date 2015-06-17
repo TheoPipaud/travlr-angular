@@ -8,16 +8,7 @@ angular
 
         	$scope.user = {};
 
-        	$scope.register = function() {
-        		$http
-        			.post(config.api_url+'/user', $scope.user)
-        			.then(function(data){
-        				localStorage.travlr_token = data.data.token;
-        			}, function(err){
-        				console.log(err);
-        			})
-
-        	}
+        	
         }
     ]);
 

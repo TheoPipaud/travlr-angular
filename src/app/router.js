@@ -84,6 +84,10 @@ angular.module('moviesapp')
                     url: '/chat/:id/:to',
                     controller: 'chatCtrl',
                     templateUrl: '/views/chat.html'
+                }).state('search', {
+                    url: '/search',
+                    controller: 'searchCtrl',
+                    templateUrl: '/views/search.html'
                 });
 
         }

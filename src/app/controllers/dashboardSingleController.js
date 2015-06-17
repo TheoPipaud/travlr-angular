@@ -8,18 +8,17 @@ angular
   .controller('dashboardSingleCtrl', [
     '$scope', '$http', '$stateParams',
     function($scope, $http, $stateParams) {
-    	$scope.activity = [];
-      $scope.posts = [];
+    	$scope.post_single = [];
+      $scope.posts_feed = [];
 
       $http.get(config.api_url+'/post/'+$stateParams.id+'?populate=owner').then(function(response) {
-        $scope.activity = response.data;
-        console.log(response.data);
+        $scope.post_single = response.data;
       }, function(err) {
         return console.log(err);
       });
    
       $http.get(config.api_url+'/post/feed').then(function(response) {
-        $scope.posts = response.data;
+        $scope.posts_feed = response.data;
       }, function(err) {
         return console.log(err);
       });
