@@ -1,0 +1,21 @@
+<div class="top">
+	<h1 class="basic-title">Parlez de votre activité aux voyageurs :</h1>
+	<h2 class="more-desc">Vous pouvez toujours mettre à jour votre calendrier pour bloquer les dates ou les libérer. Commencez par choisir l'option qui correspond le mieux à vos projets d'activités.</h2>
+</div>
+<div class="middle">
+	<div class="radio-boxes">
+		<label for="">Sélectionnez une option :</label>
+		<div ng-click="checkCustomRadio($event)" class="active">
+			Toujours disponible
+			<input type="radio" name="availability" value="everytime" checked="checked">
+		</div>
+		<div ng-click="checkCustomRadio($event)">
+			Dates spécifiques
+			<input type="radio" name="availability" value="promptly">
+		</div>
+	</div>
+</div>
+<div class="bottom clearfix">
+	<a href="" class="back">Retour</a>
+	<a ng-click="submitPart('activity.place', 2)" class="next">Suivant</a>
+</div>

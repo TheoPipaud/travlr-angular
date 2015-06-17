@@ -1,13 +1,15 @@
-<span class="illus" style="background-image: url({{post.image}})"></span>
-<span class="price">{{post.price}}€</span>
-<div class="content">
-	<h3 class="title">{{post.title}}</h3>
-	<div class="bottom">
-		<img src="{{post.owner.avatar}}" class="profil-pict" alt="">
-		<h4 class="subtitle">Organisé par {{post.owner.firstName}}</h4>
-		<div class="rate">
-			<img src="images/temp/stars.jpg" alt="" class="stars">
-			<span class="reco">- 23 recommendations</span>
+<a ui-sref="dashboardSingle({id: {{post.id}}})">
+	<span class="illus" style="background-image: url({{post.image}})"></span>
+	<span class="price">{{post.price}}€</span>
+	<div class="content">
+		<h3 class="title">{{post.title}}</h3>
+		<div class="bottom">
+			<img src="{{post.owner.avatar}}" class="profil-pict" alt="">
+			<h4 class="subtitle">Organisé par {{post.owner.firstName}}</h4>
+			<div class="rate">
+				<img src="images/temp/stars.jpg" alt="" class="stars">
+				<span class="reco">- 23 recommendations</span>
+			</div>
 		</div>
 	</div>
-</div>
+</a>

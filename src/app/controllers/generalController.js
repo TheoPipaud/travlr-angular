@@ -11,6 +11,7 @@ angular
       $scope.isLogged = false;
       $scope.user = {};
       $scope.me = {};
+      $scope.currentActivity = {};
 
       $scope.logout = function(){
       	localStorage.removeItem("travlr_token");
