@@ -79,7 +79,7 @@ angular.module('moviesapp')
                     controller: 'activityCtrl',
                     templateUrl: '/views/activity-price.html'
                 }).state('chat', {
-                    url: '/chat',
+                    url: '/chat/:id',
                     controller: 'chatCtrl',
                     templateUrl: '/views/chat.html'
                 });
