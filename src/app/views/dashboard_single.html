@@ -1,30 +1,31 @@
 <div id="single">
 	<header id="nav-bar" class="clearfix" ng-if="!isLogged" ng-include="'views/header.html'" ng-controller="headerCtrl"></header>
 	<header id="nav-bar" class="clearfix" ng-if="isLogged" ng-include="'views/header_logged.html'" ng-controller="headerCtrl"></header>
-	<section class="sct1" style="background-image:url(images/bg/home.jpg)">
+	<section class="sct1" style="background-image:url({{activity.image}})">
 	</section>
     <section class="sct2">
     	<div class="container">
     		<div class="top">
-    			<h1 class="title basic-title">Surf en poudreuse</h1>
-    			<h2 class="place">- Chamonix, France</h2>
+    			<h1 class="title basic-title">{{activity.title}}</h1>
+    			<h2 class="place">- {{activity.city}}, {{activity.country}}</h2>
     		</div>
     		<div class="other-info">
 				<img src="https://d2y7at0phqmw80.cloudfront.net/img/default_avatar.png" class="profil-pict" alt="">
-				<h4 class="subtitle">Organisé par Benoît</h4>
+				<h4 class="subtitle">Organisé par {{activity.owner.firstName}}</h4>
 				<div class="rate">
 					<img src="images/temp/stars.jpg" alt="" class="stars">
 					<span class="reco">- 23 recommendations</span>
 				</div>
-				<a href="" class="btn-contact">Contacter Benoît</a>
+				<a href="" class="btn-contact">Contacter {{activity.owner.firstName}}</a>
 			</div>
 			<div class="quantity">
-				<span class="price">83€</span>
-				<span class="nb-places">3 places restantes</span>
+				<span class="price">{{activity.price}}€</span>
+				<span class="nb-places">{{activity.maxPersons}} places dont {{activity.leftSlots}} disponibles</span>
 			</div>
 			<div class="sidebar">
+				<img src="images/temp/calendar.png" class="calendar" alt="">
 		    	<ul class="posts-list clearfix container">
-					<li ng-repeat="post in posts | limitTo:3" ng-include="'views/post.html'"></li>
+					<li ng-repeat="post in posts | limitTo:2" ng-include="'views/post.html'"></li>
 				</ul>
 		    </div>
     	</div>
@@ -32,8 +33,15 @@
     <section class="sct3">
     	<div class="container">
     		<h2 class="basic-title">Description</h2>
-    		<p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim iunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+    		<p class="desc">{{activity.content}}</p>
     		<h2 class="basic-title">Pack inclus</h2>
+    		<ul class="pack">
+    			<li><img src="images/icons/valid.png" alt="">Transport</li>
+    			<li><img src="images/icons/valid.png" alt="">Repas</li>
+    			<li><img src="images/icons/invalid.png" alt="">Boisson</li>
+    			<li><img src="images/icons/valid.png" alt="">Tickets</li>
+    			<li><img src="images/icons/invalid.png" alt="">Matériel</li>
+    		</ul>
     		<h2 class="basic-title">Gallerie photo</h2>
     		<ul class="gallery clearfix">
     			<li><img src="images/temp/city.jpg" alt=""></li>
