@@ -23,6 +23,7 @@ angular
       };
 
       $scope.login = function() {
+        console.log('login');
       	$http
       		.post(config.api_url+'/auth/login', $scope.user)
       		.then(function(data){
@@ -52,14 +53,99 @@ angular
           console.log(err);
         });
 
-
-
       $http.get(config.api_url + '/post').then(function(response) {
-        console.log('response', response.data);
         $scope.posts = response.data;
       }, function(err) {
         return console.log(err);
       });
+
+      $scope.openPopup = function(type){
+        var href = '#popup-'+type;
+        // if(!popup.is_opened){
+        popup.update(href, function(){
+          popup.open();
+        });
+      }
+
+      $scope.closePopup = function(event){
+        popup.close();
+      }
+
+      var environment = {
+        width: $(window).width(),
+        height: $(window).height(),
+        scroll: $(window).scrollTop()
+      }
+
+      $(window).resize(function(){
+        environment.width = $(window).width();
+        environment.height = $(window).height();
+        redimensionnement();
+      });
+
+      var popup = {
+        is_opened: false,
+        transition_duration: 200,
+        open: function(){
+          console.log('open');
+          popup.is_opened = true;
+          $('.popup-container').css({display:"table"}).stop().animate({opacity:1}, popup.transition_duration, function(){
+            $('.popup-container .wrapper>div').stop().animate({"margin-top":"0px", "opacity": 1}, popup.transition_duration);
+          });
+          $('body').addClass('no-scroll');
+        },
+        close: function(reopen, callback){
+          console.log('close');
+          popup.is_opened = false;
+          $('.popup-container .wrapper>div').stop().animate({"margin-top":"100px", "opacity": 0}, popup.transition_duration, function(){
+            if(!reopen){
+              $('.popup-container').stop().animate({opacity:0}, popup.transition_duration, function(){
+                $('.popup-container').css({display:"none"});
+                if(callback){
+                  callback();
+                }
+              });
+            }else{
+              if(callback){
+                callback();
+              }
+            }
+            $('body').removeClass('no-scroll');
+          });
+        },
+        update: function(href, callback){
+          console.log('update');
+          var temp_html = $(href).html();
+          $('.popup-container .wrapper>div').html(temp_html).removeClass().addClass(href.replace('#',''));
+          cboxAction();
+          callback();
+        }
+      }
+
+
+      function cboxAction(){
+        $(".cbox-html").unbind("click").bind("click", function(e){
+          e.preventDefault();
+          var href = $(this).attr('href');
+          if(!popup.is_opened){
+            popup.update(href, function(){
+              popup.open();
+            });
+          }else{
+            popup.close(true, function(){
+              popup.update(href, function(){
+                popup.open();
+              });
+            });
+          }
+        }); 
+      }
+
+      // $('.popup-container').click(function(e){
+      //   if(e.target.outerHTML.indexOf('popup-container')>0){
+      //     popup.close(false);
+      //   }
+      // });
 
     }
   ]);

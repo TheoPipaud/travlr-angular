@@ -1,0 +1,68 @@
+.popup-wrapper{
+	display: none;
+}
+
+.popup-container{
+	position: fixed;
+	display: none;
+	height: 100%;
+	width: 100%;
+	background: rgba(0,0,0,0.5);
+	z-index: 9999;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	overflow: scroll;
+	cursor: pointer;
+	.wrapper{
+		margin: 0 auto;
+		box-sizing: border-box;
+		cursor: initial;
+		display: table-cell;
+		vertical-align: middle;
+		cursor: pointer;
+		&>div{
+			background: $grey-light;
+			border-radius: 3px;
+			width: 340px;
+			position: relative;
+			margin: 100px auto 0 auto;
+			opacity: 0;
+			color: $grey-medium;
+			box-sizing: border-box;
+			padding: 40px 0;
+			box-shadow: 0px 4px 9px rgba(0,0,0,0.3);
+			padding: 20px;
+			.email, .password{
+				display: block;
+				width: 100%;
+				background: white;
+				border-radius: 3px;
+				border: none;
+				-webkit-apparence: none;
+				height: 50px;
+				border-radius: 3px;
+				margin-bottom: 10px;
+				padding: 0 16px;
+				box-sizing: border-box;
+				font-size: 0.875rem;
+			}
+			input[type="submit"]{
+				background: #757fff;
+				text-transform: uppercase;
+				color: white;
+				letter-spacing: 2px;
+				height: 50px;
+				width: 100%;
+				display: block;
+				border-radius: 3px;
+				border: none;
+				padding: 0 16px;
+				font-size: 0.75rem;
+			}
+			.basic-title{
+				margin-bottom: 20px;
+			}
+		}
+	}
+}
