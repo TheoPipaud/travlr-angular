@@ -6,8 +6,48 @@
 angular
   .module('moviesapp.controllers.chat', [])
   .controller('chatCtrl', [
-    '$scope',
-    function($scope) {
+    '$scope', '$http', '$stateParams', '$sailsSocket',
+    function($scope, $http, $stateParams, $sailsSocket) {
+
+
+
+      $scope.messages = [];
+      $scope.message = {
+        content: ''
+      };
+
+      $scope.sendMsg = function() {
+
+        $http.post(config.api_url + '/message', {
+          room: $stateParams.id,
+          to: $stateParams.to,
+          content: $scope.message.content,
+          from: $scope.$parent.user_id
+        }).then(function() {
+          $scope.message.content = '';
+        }, function(err) {
+          $scope.message.content = '';
+        });
+
+      };
+
+      $sailsSocket.post(config.api_url + '/post/subscribe', {
+        postId: $stateParams.id
+      }).then(function(response) {
+        return;
+      }, function(err) {
+        return console.log(err);
+      });
+
+
+      $sailsSocket.subscribe('message', function(event) {
+          $scope.messages.push(event);
+      });
+
+
+
+
+
     	
     }
   ]);

@@ -5,25 +5,18 @@
 	<section class="chat-feed">
 		<div class="global">
 			<ul class="feed">
-				<li>
-					<img src="https://d2y7at0phqmw80.cloudfront.net/img/default_avatar.png" alt="">
+				<li data-ng-repeat="mess in messages">
+					<img ng-src="{{mess.from.avatar}}" alt="">
 					<div class="content">
-						<h2 class="name">Billy Shen</h2>
+						<h2 class="name">{{mess.from.firstName}}</h2>
 						<span class="datetime">Le 20/02 à 10h07</span>
-						<p class="text">Théo je viens de réfléchir, je pense vraiment qu'on devrait utiliser React JS comme techno en front Théo je viens de réfléchir, je pense vraiment qu'on devrait utiliser React JS comme techno en front Théo je viens de réfléchir, je pense vraiment qu'on devrait utiliser React JS comme techno en front Théo je viens de réfléchir, je pense vraiment qu'on devrait utiliser React JS comme techno en front Théo je viens de réfléchir, je pense vraiment qu'on devrait utiliser React JS comme techno en front </p>
+						<p class="text">{{ mess.content }} </p>
 					</div>
 				</li>
-				<li>
-					<img src="https://d2y7at0phqmw80.cloudfront.net/img/default_avatar.png" alt="">
-					<div class="content">
-						<h2 class="name">Billy Shen</h2>
-						<span class="datetime">Le 20/02 à 10h07</span>
-						<p class="text">Théo je viens de réfléchir, je pense vraiment qu'on devrait utiliser React JS comme techno en front Théo je viens de réfléchir, je pense vraiment qu'on devrait utiliser React JS comme techno.</p>
-					</div>
-				</li>
+
 			</ul>
-			<form action="">
-				<input type="text" name="" id="" placeholder="Votre message ici...">
+			<form action="javascript:;" data-ng-submit="sendMsg(message)">
+				<input type="text" name="" ng-model="message.content" placeholder="Votre message ici...">
 				<input type="submit" value="Envoyer">
 			</form>
 		</div>

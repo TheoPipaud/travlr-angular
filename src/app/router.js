@@ -18,13 +18,14 @@ angular.module('moviesapp')
 )
     .config(
     [
-        '$stateProvider', '$urlRouterProvider', '$httpProvider',
-        function ($stateProvider, $urlRouterProvider, $httpProvider) {
+        '$stateProvider', '$urlRouterProvider', '$httpProvider', '$sailsSocketProvider',
+        function ($stateProvider, $urlRouterProvider, $httpProvider, $sailsSocketProvider) {
 
             $httpProvider.defaults.useXDomain = true;
             delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
             $httpProvider.interceptors.push('AuthInterceptor');
+            $sailsSocketProvider.interceptors.push('AuthInterceptor');
 
             // Send to login if the URL was not found
             $urlRouterProvider.otherwise("/home");
@@ -78,8 +79,9 @@ angular.module('moviesapp')
                     url: '/price',
                     controller: 'activityCtrl',
                     templateUrl: '/views/activity-price.html'
-                }).state('chat', {
-                    url: '/chat/:id',
+                })
+                .state('chat', {
+                    url: '/chat/:id/:to',
                     controller: 'chatCtrl',
                     templateUrl: '/views/chat.html'
                 });
