@@ -1,0 +1,147 @@
+#single{
+	height: 100%;
+	.sct1{
+		background-position: center center;
+		background-size: cover;
+		display: block;
+		height: 70%;
+		width: 100%;
+	}
+	.sct2{
+		height: 200px;
+		background: white;
+		width: 100%;
+		.container{
+			padding-right: 340px;
+			box-sizing: border-box;
+			position: relative;
+		}
+		.top{
+			padding-top: 35px;
+			margin-bottom: 10px;
+			.title{
+				text-align: left;
+				display: inline-block;
+				margin: 0;
+			}
+			.place{
+				display: inline-block;
+				font-size: 1.188rem;
+				color: $grey-dark;
+				margin-left: 5px;
+			}
+		}
+		.other-info{
+			.profil-pict{
+				display: block;
+				height: 50px;
+				width: 50px;
+				border-radius: 32px;
+				float: left;
+				margin-right: 10px;
+			}
+			.subtitle{
+				font-weight: 400;
+				font-size: 1rem;
+				display: block;
+				padding-top: 5px;
+			}
+			.rate{
+				display: block;
+				.stars{
+					width: 75px;
+					display: inline-block;
+					height: 10px;
+					vertical-align: top;
+					margin-right: 5px;
+					margin-top: 8px;
+				}
+				.reco{
+					font-size: 0.875rem;
+					vertical-align: top;
+					display: inline-block;
+					margin-top: 4px;
+				}
+			}
+			.btn-contact{
+				color: white;
+			    display: inline-block;
+			    font-size: 12px;
+			    cursor: pointer;
+			    text-decoration: none;
+			    background: $blue;
+			    border-radius: 3px;
+			    padding: 0 10px;
+			    color: white;
+			    height: 30px;
+			    line-height: 30px;
+			    margin-top: 15px;
+			}
+		}
+		.quantity{
+			position: absolute;
+			right: 400px;
+			top: 40px;
+			.price{
+				background: $green;
+				border-radius: 50px;
+				height: 75px;
+				width: 75px;
+				line-height: 75px;
+				text-align: center;
+				color: white;
+				font-weight: 600;
+				font-size: 1.313rem;
+				display: block;
+				margin: 0 auto 20px auto;
+			}
+			.nb-places{
+				color: $grey-dark;
+				font-size: 1.313rem;
+			}
+		}
+		.sidebar{
+			position: absolute;
+			right: 0;
+			top: -20px;
+			width: 285px;
+			.posts-list{
+				li{
+					margin-right: 0;
+				}
+			}
+		}
+	}
+	.sct3{
+		background: $grey-light;
+		.container{
+			padding-right: 340px;
+			box-sizing: border-box;
+			padding-top: 40px;
+			.basic-title{
+				margin-bottom: 35px;
+				text-align: left;
+				font-weight: 400;
+			}
+			.desc{
+				color: $grey-dark;
+				font-size: 0.875rem;
+				line-height: 20px;
+				margin-bottom: 35px;
+			}
+			.gallery{
+				li{
+					width: 33.33%;
+					overflow: hidden;
+					height: 33.33%;
+					float: left;
+					img{
+						width: 100%;
+						height: 100%;
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}

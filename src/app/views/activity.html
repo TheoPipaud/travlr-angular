@@ -1,19 +1,23 @@
-<form data-ng-submit="createActivity()">
+<div id="create-activity">
+	<header id="nav-bar" class="clearfix fixed" ng-if="!isLogged" ng-include="'views/header.html'" ng-controller="headerCtrl"></header>
+	<header id="nav-bar" class="clearfix fixed" ng-if="isLogged" ng-include="'views/header_logged.html'" ng-controller="headerCtrl"></header>
 
-	<label for="title">Titre :</label>
-	<input type="text" name="title" id="title" data-ng-model="activity.title">
-	<label for="category">Catégorie</label>
-	<select name="category" id="category" data-ng-model="activity.category">
-		<option value="water">Eau</option>
-		<option value="ground">Terre</option>
-		<option value="air">Air</option>
-		<option value="snow">Neige</option>
-	</select>
-	<label for="description">Description :</label>
-	<textarea name="description" id="description" cols="30" rows="10" data-ng-model="activity.content"></textarea>
-	<!-- <label for="nb_places">Nombre de places disponibles :</label>
-	<input type="number" name="nb_places" data-ng-model="activity.np_places"> -->
-	<label for="price">Prix/place</label>
-	<input type="price" name="price" data-ng-model="activity.price">
-	<input type="submit" value="Créer l'activité"/>
-</form>
+	<div class="guidebar">
+		<a class="active" ng-click="onGuidebarClick('activity.detail', 1)"><span>1</span>Détail de l'activité</a>
+		<a ng-click="onGuidebarClick('activity.availability', 2)"><span>2</span>Mes disponibilités</a>
+		<a ng-click="onGuidebarClick('activity.place', 3)"><span>3</span>Lieu</a>
+		<a ng-click="onGuidebarClick('activity.price', 4)"><span>4</span>Tarifs</a>
+		<div id="bar">
+			<div class="dots">
+				<span class="active"></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>		
+		</div>
+	</div>
+	
+	<form>
+		<ui-view class="content"></ui-view>
+	</form>
+</div>

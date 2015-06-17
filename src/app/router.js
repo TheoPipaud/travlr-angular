@@ -59,6 +59,25 @@ angular.module('moviesapp')
                     url: '/activity',
                     controller: 'activityCtrl',
                     templateUrl: '/views/activity.html'
+                })
+                .state('activity.detail', {
+                    url: '/detail',
+                    controller: 'activityCtrl',
+                    templateUrl: '/views/activity-detail.html'
+                })
+                .state('activity.availability', {
+                    url: '/availability',
+                    controller: 'activityCtrl',
+                    templateUrl: '/views/activity-availability.html'
+                }).state('activity.place', {
+                    url: '/place',
+                    controller: 'activityCtrl',
+                    templateUrl: '/views/activity-place.html'
+                })
+                .state('activity.price', {
+                    url: '/price',
+                    controller: 'activityCtrl',
+                    templateUrl: '/views/activity-price.html'
                 });
 
         }
