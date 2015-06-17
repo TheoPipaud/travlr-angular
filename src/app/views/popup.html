@@ -6,12 +6,13 @@
     
     <div class="popup-wrapper" id="popup-login">
         <span class="basic-title">Connexion</span>
-        <form data-ng-submit="login()">
+        <form data-ng-submit="login()" action="javascript:;">
             <input type="email" name="login" class="email" placeholder="Login" data-ng-model="user.email"/>
             <input type="password" class="password" name="password" placeholder="Password" data-ng-model="user.password"/>
-            <input type="submit" value="se connecter"/>
+            <input type="submit" value="se connecter" />
         </form>
     </div>
+
 
     <div class="popup-wrapper" id="popup-register">
         <span class="basic-title">Inscription</span>

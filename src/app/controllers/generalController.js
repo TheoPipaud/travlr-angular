@@ -22,6 +22,7 @@ angular
       	$state.go('home');
       };
 
+
       $scope.login = function() {
         console.log('login');
       	$http
