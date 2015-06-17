@@ -15,7 +15,7 @@ angular
 
       console.log('dashboardCtrl');
 
-    	$http.get('http://travlr.scalingo.io/post').then(function(response) {
+    	$http.get(config.api_url + '/post').then(function(response) {
     		console.log('response', response.data);
         $scope.posts = response.data;
       }, function(err) {

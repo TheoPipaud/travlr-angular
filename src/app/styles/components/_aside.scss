@@ -1,0 +1,53 @@
+aside{
+  position: fixed;
+  width: 210px;
+  background-color:$blue-deep;
+/*  background-color: rgb(42, 42, 42);*/
+  height: 100%;
+  top: 0;
+}
+
+#sidebar{  padding-top:85px;}
+
+aside h3{
+  margin-left:15px;
+  color: rgb(84, 103, 126);
+  font-weight: 400;
+  margin-bottom:7px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+aside nav ul li {
+  line-height:38px;
+  cursor:pointer;
+}
+
+aside section{
+  margin-bottom:20px;
+}
+
+.fa{
+  font-size: 0.9rem;
+  margin-right:2px;
+}
+
+aside nav ul li:hover {
+  background-color:$blue-deep-hover;
+}
+aside nav ul li:hover a {
+  color:white;
+}
+aside nav ul li a{
+  text-decoration: none;
+  color:rgb(118, 134, 153);
+  font-weight:300;
+  padding-left:17px;
+}
+.travlr{
+
+}
+.container{
+  margin-left:240px;
+
+}

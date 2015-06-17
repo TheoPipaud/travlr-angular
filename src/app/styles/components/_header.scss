@@ -1,14 +1,14 @@
 #nav-bar{
   height: 60px;
   width: 100%;
-  color: $black;
+  color: white;
+  background:$blue-dark;
   line-height: 60px;
   padding: 0 40px;
-  background: $grey-light;
   position: relative;
   box-sizing: border-box;
   top: 0;
-  padding: 0 115px;
+  padding: 0 44px;
   left: 0;
   z-index: 2;
   .left{
@@ -58,7 +58,7 @@
             width: 0;
             display: inline-block;
             border: 5px solid transparent;
-            border-top-color: $black;
+            border-top-color: white;
             vertical-align: middle;
             margin-top: 4px;
             margin-left: 10px;
@@ -69,11 +69,11 @@
         margin-top: 10px;
         a{
           display: block;
-          background: $grey-light;
+          background: $blue-deep;
           padding: 2px 20px;
           font-weight: 400;
           &:hover{
-            background: $grey-medium;
+            background: $blue-deep-hover;
             color: white;
           }
         }
@@ -84,7 +84,7 @@
     }
   }
   a{
-    color: $black;
+    color: white;
     display: inline-block;
     font-size: 12px;
     cursor: pointer;
