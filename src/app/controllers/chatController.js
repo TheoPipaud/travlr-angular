@@ -41,6 +41,7 @@ angular
 
 
       $sailsSocket.subscribe('message', function(event) {
+        console.log('got msg');
           $scope.messages.push(event);
       });
 
