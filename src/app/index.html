@@ -20,10 +20,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.14/angular-ui-router.min.js"></script>
-    
+
     <script src="/conf.js"></script>
     <script src="/app.js"></script>
     <script src="/router.js"></script>
+    <script src="/assets/sails.io.js"></script>
+    <script>
+      io.sails.useCORSRouteToGetCookie = false;
+      io.sails.url = config.api_url;
+    </script>
+
+    <script src="/assets/ngsails.io.js"></script>
     <script src="/interceptors/AuthInterceptor.js"></script>
     
     <script src="/controllers/headerController.js"></script>

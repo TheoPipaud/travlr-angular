@@ -6,14 +6,12 @@
 angular
   .module('moviesapp.controllers.dashboard', [])
   .controller('dashboardCtrl', [
-    '$scope', '$http',
-    function($scope, $http) {
+    '$scope', '$http', '$sailsSocket',
+    function($scope, $http, $sailsSocket) {
 
         $scope.isOpen = false;
 
     	$scope.activities = [];
-
-      console.log('dashboardCtrl');
 
     	$http.get(config.api_url + '/post').then(function(response) {
     		console.log('response', response.data);

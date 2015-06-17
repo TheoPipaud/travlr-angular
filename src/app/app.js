@@ -1,6 +1,7 @@
 
 angular.module('moviesapp', [
   'ui.router',
+  'sails.io',
   'moviesapp.controllers.movies',
   'moviesapp.controllers.header',
   'moviesapp.controllers.login',
