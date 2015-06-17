@@ -19,4 +19,9 @@ html, body, .ng-global{
 	max-width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
+	&.posts-list{
+		&>li:nth-child(4n){
+			margin-right: 0;
+		}
+	}
 }
