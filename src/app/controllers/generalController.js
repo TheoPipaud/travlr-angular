@@ -80,7 +80,6 @@ angular
       $(window).resize(function(){
         environment.width = $(window).width();
         environment.height = $(window).height();
-        redimensionnement();
       });
 
       var popup = {
