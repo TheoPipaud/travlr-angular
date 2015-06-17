@@ -28,6 +28,7 @@ angular
 
       };
 
+
       $scope.login = function() {
       	$http
       		.post(config.api_url+'/auth/login', $scope.user)
