@@ -6,7 +6,7 @@
 /**
  * Config for the router
  */
-angular.module('moviesapp')
+angular.module('travlrapp')
     .run(
     [
         '$rootScope',

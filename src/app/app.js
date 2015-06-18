@@ -1,17 +1,17 @@
 
-angular.module('moviesapp', [
+angular.module('travlrapp', [
   'ui.router',
   'sails.io',
-  'moviesapp.controllers.movies',
-  'moviesapp.controllers.header',
-  'moviesapp.controllers.login',
-  'moviesapp.controllers.register',
-  'moviesapp.controllers.dashboard',
-  'moviesapp.controllers.singledashboard',
-  'moviesapp.controllers.activity',
-  'moviesapp.controllers.general',
-  'moviesapp.controllers.chat',
-  'moviesapp.controllers.search',
-  'moviesapp.controllers.sidebar',
+  'travlrapp.controllers.movies',
+  'travlrapp.controllers.header',
+  'travlrapp.controllers.login',
+  'travlrapp.controllers.register',
+  'travlrapp.controllers.dashboard',
+  'travlrapp.controllers.singledashboard',
+  'travlrapp.controllers.activity',
+  'travlrapp.controllers.general',
+  'travlrapp.controllers.chat',
+  'travlrapp.controllers.search',
+  'travlrapp.controllers.sidebar',
   'app.interceptors.auth'
 ]);

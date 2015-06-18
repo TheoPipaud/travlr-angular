@@ -4,7 +4,7 @@
 'use strict';
 
 angular
-  .module('moviesapp.controllers.singledashboard', [])
+  .module('travlrapp.controllers.singledashboard', [])
   .controller('dashboardSingleCtrl', [
     '$scope', '$http', '$stateParams',
     function($scope, $http, $stateParams) {
@@ -17,7 +17,7 @@ angular
         return console.log(err);
       });
    
-      $http.get(config.api_url+'/post/feed').then(function(response) {
+      $http.get(config.api_url+'/post/feed?populate=owner').then(function(response) {
         $scope.posts_feed = response.data;
       }, function(err) {
         return console.log(err);

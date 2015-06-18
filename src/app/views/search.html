@@ -1,19 +1,20 @@
 <div id="search">
 	<header id="nav-bar" class="clearfix fixed" ng-if="!isLogged" ng-include="'views/header.html'" ng-controller="headerCtrl"></header>
 	<header id="nav-bar" class="clearfix fixed" ng-if="isLogged" ng-include="'views/header_logged.html'" ng-controller="headerCtrl"></header>
-	<form action="" class="filters">
+	<form action="" class="filters" ng-submit="search()">
 		<div class="container">
-			<input type="text" class="insert-input" placeholder="Où ?">
-			<input type="text" class="insert-input" placeholder="Activité">
-			<input type="date" class="insert-input" class="date">
-			<input type="submit" value="Modifiez votre recherche">
+			<input type="text" class="insert-input" placeholder="Où ?" data-ng-model="search_params.country">
+			<input type="text" class="insert-input" placeholder="Quoi ?" data-ng-model="search_params.query">
+			<input type="date" class="insert-input" class="date" data-ng-model="search_params.date">
+			<input type="submit" value="Filtrez votre recherche">
 		</div>
 	</form>
-	<div class="top" style="background-image:url(images/temp/search.jpg)">
+	<!-- <div class="top-part" style="background-image:url(images/temp/search.jpg)">
 		Val d'Isère
-	</div>
-	<ul class="posts-list clearfix container">
+	</div> -->
+	<ul class="posts-list clearfix container" ng-if="!noresults">
 		<li ng-repeat="post in search_posts" ng-include="'views/post.html'">
 		</li>
 	</ul>
+	<p ng-if="noresults" class="noresults">Aucun résultat ne correspond à vos critères.</p>
 </div>

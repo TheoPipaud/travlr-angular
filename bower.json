@@ -1,8 +1,8 @@
 {
-  "name": "moviesapp",
+  "name": "travlrapp",
   "main": [
-    "/dist/moviesapp.min.js",
-    "/dist/moviesapp.min.css"
+    "/dist/travlrapp.min.js",
+    "/dist/travlrapp.min.css"
   ],
   "version": "0.1.0",
   "description": "TODO",

@@ -5,7 +5,7 @@
 'use strict';
 
 angular
-    .module('moviesapp.controllers.movies', [])
+    .module('travlrapp.controllers.movies', [])
     .controller('moviesCtrl', [
         '$scope', '$http',
         function($scope, $http) {
@@ -32,7 +32,7 @@ angular
 'use strict';
 
 angular
-    .module('moviesapp.controllers.header', [])
+    .module('travlrapp.controllers.header', [])
     .controller('headerCtrl', [
         '$scope',
         function($scope) {
@@ -49,10 +49,10 @@ appConfig = {
     appUrl: 'http://91.121.204.52:1337'
 };
 
-angular.module('moviesapp', [
+angular.module('travlrapp', [
   'ui.router',
-  'moviesapp.controllers.movies',
-  'moviesapp.controllers.header'
+  'travlrapp.controllers.movies',
+  'travlrapp.controllers.header'
 ]);
 
 /**
@@ -63,7 +63,7 @@ angular.module('moviesapp', [
 /**
  * Config for the router
  */
-angular.module('moviesapp')
+angular.module('travlrapp')
     .run(
     [
         '$rootScope',
@@ -97,12 +97,12 @@ angular.module('moviesapp')
 );
 (function(module) {
 try {
-  module = angular.module('moviesapp');
+  module = angular.module('travlrapp');
 } catch (e) {
-  module = angular.module('moviesapp', []);
+  module = angular.module('travlrapp', []);
 }
 module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('/moviesapp/views/movies.html',
+  $templateCache.put('/travlrapp/views/movies.html',
     '<div class="wrapper"><div class="row"><div class="browse-movie-wrap col-xs-10 col-sm-2 col-md-2 col-lg-2 m-t" data-ng-repeat="movie in movies"><a href="https://yts.to/movie/creep-van-2012" class="browse-movie-link"><figure><img class="img-responsive" src="https://s.ynet.io/assets/images/movies/creep_van_2012/medium-cover.jpg" alt="Creep Van (2012) download"><figcaption class="hidden-xs hidden-sm"><span class="icon-star"></span><h4 class="rating">{{ movie.rating }} / 10</h4><h4>Horreur</h4><span class="button-green-download-big">Voir Détails</span></figcaption></figure></a><div class="browse-movie-bottom"><a href="https://yts.to/movie/creep-van-2012" class="browse-movie-title">{{ movie.title }}</a><div class="browse-movie-year">{{ movie.year }}</div></div></div></div></div>');
 }]);
 })();
