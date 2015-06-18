@@ -7,8 +7,8 @@
 angular
     .module('travlrapp.controllers.movies', [])
     .controller('homeCtrl', [
-        '$scope', '$http',
-        function($scope, $http) {
+        '$scope', '$http', '$state',
+        function($scope, $http, $state) {
 
             $scope.posts_feed = [];
             
@@ -18,6 +18,10 @@ angular
 			}, function(err) {
 				return console.log(err);
 			});
+
+            $scope.onSearch = function(){
+                $state.go('search');
+            }
 
         }
 

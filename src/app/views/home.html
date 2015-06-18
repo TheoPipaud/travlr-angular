@@ -5,10 +5,10 @@
 	<section class="sct1">
 		<h1 class="centered"><strong>Partout</strong> où vous allez<br>il y a quelqu'un pour vous</h1>
 		<div class="fast-search">
-			<form action="">
-				<input type="text" class="insert-input" placeholder="Où ?">
-				<input type="text" class="insert-input" placeholder="Activité">
-				<input type="date" class="insert-input" class="date">
+			<form data-ng-submit="onSearch()" action="javascript:;">
+				<input type="text" class="insert-input" placeholder="Où ?" data-ng-model="search_params.country">
+				<input type="text" class="insert-input" placeholder="Quoi ?" data-ng-model="search_params.query">
+				<input type="date" class="insert-input" class="date" data-ng-model="search_params.date">
 				<input type="submit" value="Rechercher une activité">
 			</form>
 		</div>
@@ -27,15 +27,10 @@
 						<h3 class="city"><div>Courchevel<span>124 GUIDR répertoriés</span></div></h3>
 					</a>
 				</li>
-<<<<<<< HEAD
-				<li class="mr20" style="background-image: url(http://www.sea2summit.net/Pictures/mountain-walking-sunset.jpg)">
-					<h3 class="city">Normandie</h3>
-=======
 				<li class="mr20" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/MERIBEL.jpg/280px-MERIBEL.jpg)">
 					<a href="">
 						<h3 class="city"><div>Méribel<span>1258 GUIDR répertoriés</span></div></h3>
 					</a>
->>>>>>> ef29cd9beb9594d62f985543d19c6efbde1319a5
 				</li>
 				<li style="background-image: url(http://img6.onthesnow.com/image/gg/13/abri%C3%A8s_139769.jpg)">
 					<a href="">

@@ -30,8 +30,6 @@ angular.module('travlrapp')
             // Send to login if the URL was not found
             $urlRouterProvider.otherwise("/home");
 
-
-
             $stateProvider
                 .state('home', {
                     url: '/home',

@@ -6,11 +6,10 @@ angular
         '$scope', '$http',
         function($scope, $http) {
 
-        	$scope.search_params = {query: "", country: "", city: ""};
             $scope.noresults = false;
+            console.log($scope.$parent.search_params);
             $scope.search = function(){
-                console.log($scope.search_params);
-                $http.post(config.api_url+'/search/index', $scope.search_params).then(function(response) {
+                $http.post(config.api_url+'/search/index', $scope.$parent.search_params).then(function(response) {
                     if(response.data.length == 0){
                         $scope.noresults = true;
                     }else{

@@ -12,6 +12,7 @@ angular
       $scope.user = {};
       $scope.user_register = {};
       $scope.me = {};
+      $scope.search_params = {query: "", country: "", city: ""};
       $scope.currentActivity = {
         values : {}
       };
