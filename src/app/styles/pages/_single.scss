@@ -83,7 +83,7 @@
 			right: 400px;
 			top: 40px;
 			.price{
-				background: $green;
+				background: $blue;
 				border-radius: 50px;
 				height: 75px;
 				width: 75px;
@@ -139,11 +139,12 @@
 				li{
 					width: 33.33%;
 					overflow: hidden;
-					height: 33.33%;
+					height: 200px;
 					float: left;
 					img{
-						width: 100%;
-						height: 100%;
+						min-width: 100%;
+						min-height: 100%;
+						max-height: 150%;
 						display: block;
 					}
 				}
