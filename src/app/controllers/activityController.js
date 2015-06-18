@@ -21,15 +21,6 @@ angular
             }, function(err){
                 console.log(err);
             })
-        // $scope.checkCustomRadio = function(event){
-        //     var it = angular.element(event.target);
-        //     if(!it.hasClass('active')){
-        //         it.closest('.radio-boxes').find('div').removeClass('active').find('input').prop("checked", false);
-        //         it.addClass('active');
-        //         it.find("input").prop("checked", true);
-        //     }
-        //     it.closest('.radio-boxes').find(input).prop("checked", false);
-        // };
         $scope.onGuidebarClick = function(url, id){
             console.log($scope.$parent.currentActivity.state);
             if($scope.$parent.currentActivity.state >= (id-1)){

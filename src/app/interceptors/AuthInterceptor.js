@@ -68,9 +68,9 @@ angular.module('app.interceptors.auth', [])
                 responseError: function (response) {
                     console.log('GOT 401 OR 403');
                     console.log(response);
-                    if ((response.status === 401 || response.status === 403) && response.config.url.indexOf('scalingo') > -1) {
+                    if ((response.status === 401 || response.status === 403)) {
 
-                        $injector.get('$state').go('login');
+                        $injector.get('$state').go('home');
                     }
  
                     return $q.reject(response);

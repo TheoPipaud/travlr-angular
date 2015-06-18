@@ -12,31 +12,26 @@ angular
       $scope.user = {};
       $scope.user_register = {};
       $scope.me = {};
-      $scope.posts_perso = {};
       $scope.currentActivity = {
         values : {}
       };
 
       $scope.logout = function(){
       	localStorage.removeItem("travlr_token");
-      	$scope.isLogged = false;
-      	console.log('redirect');
-        $scope.me = {};
-        $scope.user = {};
-        $scope.user_register = {};
       	$state.go('home');
-
+        $scope.isLogged = false;
       };
-
 
       $scope.login = function() {
       	$http
       		.post(config.api_url+'/auth/login', $scope.user)
       		.then(function(data){
       			localStorage.travlr_token = data.data.token;
-            $scope.isLogged = true;
-            $scope.$broadcast('logged', $scope.user);
-      			$state.go('dashboard');
+              $scope.isLogged = true;
+              getMyself();
+                //window.location.href = '#/dashboard';
+                $state.go('dashboard');
+
       		}, function(err){
       			console.log(err);
       		})
@@ -46,10 +41,12 @@ angular
         $http
           .post(config.api_url+'/user', $scope.user_register)
           .then(function(data){
+            console.log($scope.user_register);
             $http
-              .post(config.api_url+'/auth/login', $scope.user)
+              .post(config.api_url+'/auth/login', $scope.user_register)
               .then(function(data){
                 localStorage.travlr_token = data.data.token;
+                getMyself();
                 $scope.isLogged = true;
                 // $state.go('dashboard');
                 
@@ -65,27 +62,23 @@ angular
       
       if(localStorage.travlr_token){
       	$scope.isLogged = true;
-        $scope.user_id = JSON.parse(localStorage.travlr_token).id;
-      	console.log('logged');
+        getMyself();
       }else{
       	$scope.isLogged = false;
       	console.log('not logged');
       }
 
-      $http
-        .get(config.api_url+'/user/'+$scope.user_id)
-        .then(function(response){
-          $scope.me = response.data;
-        }, function(err){
-          console.log(err);
-        });
-
-      $http.get(config.api_url + '/post').then(function(response) {
-        $scope.posts_perso = response.data;
-      }, function(err) {
-        return console.log(err);
-      });
-
+      function getMyself(){
+        $scope.user_id = JSON.parse(localStorage.travlr_token).id;
+        $http
+          .get(config.api_url+'/user/'+$scope.user_id)
+          .then(function(response){
+            console.log(response.data);
+            $scope.me = response.data;
+          }, function(err){
+            console.log(err);
+          });
+      }
       $scope.openPopup = function(type){
         var href = '#popup-'+type;
         // if(!popup.is_opened){
