@@ -1,7 +1,7 @@
 <div id="chat">
 	<header id="nav-bar" class="clearfix fixed" ng-if="!isLogged" ng-include="'views/header.html'" ng-controller="headerCtrl"></header>
 	<header id="nav-bar" class="clearfix fixed" ng-if="isLogged" ng-include="'views/header_logged.html'" ng-controller="headerCtrl"></header>
-	<aside data-ng-include="'views/sidebar.html'"></aside>
+	<aside data-ng-include="'views/sidebar.html'" ng-controller="sidebarCtrl"></aside>
 	<section class="chat-feed">
 		<div class="global">
 			<ul class="feed">

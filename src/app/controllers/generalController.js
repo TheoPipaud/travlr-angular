@@ -10,6 +10,7 @@ angular
     function($scope, $state, $http) {
       $scope.isLogged = false;
       $scope.user = {};
+      $scope.user_register = {};
       $scope.me = {};
       $scope.currentActivity = {
         values : {}
@@ -17,49 +18,67 @@ angular
 
       $scope.logout = function(){
       	localStorage.removeItem("travlr_token");
-      	$scope.isLogged = false;
-      	console.log('redirect');
       	$state.go('home');
+        $scope.isLogged = false;
       };
 
-
       $scope.login = function() {
-        console.log('login');
       	$http
       		.post(config.api_url+'/auth/login', $scope.user)
       		.then(function(data){
       			localStorage.travlr_token = data.data.token;
-            $scope.isLogged = true;
-      			$state.go('dashboard');
+              $scope.isLogged = true;
+              getMyself();
+                //window.location.href = '#/dashboard';
+                $state.go('dashboard');
+
       		}, function(err){
       			console.log(err);
       		})
       };
+
+      $scope.register = function() {
+        $http
+          .post(config.api_url+'/user', $scope.user_register)
+          .then(function(data){
+            console.log($scope.user_register);
+            $http
+              .post(config.api_url+'/auth/login', $scope.user_register)
+              .then(function(data){
+                localStorage.travlr_token = data.data.token;
+                getMyself();
+                $scope.isLogged = true;
+                // $state.go('dashboard');
+                
+                window.location.href = '#/dashboard';
+                location.reload();
+              }, function(err){
+                console.log(err);
+              })
+          }, function(err){
+            console.log(err);
+          })
+      };
       
       if(localStorage.travlr_token){
       	$scope.isLogged = true;
-        $scope.user_id = JSON.parse(localStorage.travlr_token).id;
-      	console.log('logged');
+        getMyself();
       }else{
       	$scope.isLogged = false;
       	console.log('not logged');
       }
 
-
-      $http
-        .get(config.api_url+'/user/'+$scope.user_id)
-        .then(function(response){
-          $scope.me = response.data;
-        }, function(err){
-          console.log(err);
-        });
-
-      $http.get(config.api_url + '/post').then(function(response) {
-        $scope.posts = response.data;
-      }, function(err) {
-        return console.log(err);
-      });
-
+      function getMyself(){
+        $scope.user_id = JSON.parse(localStorage.travlr_token).id;
+        $http
+          .get(config.api_url+'/user/'+$scope.user_id)
+          .then(function(response){
+            console.log(response.data);
+            $scope.me = response.data;
+          }, function(err){
+            console.log(err);
+          });
+      }
       $scope.openPopup = function(type){
         var href = '#popup-'+type;
         // if(!popup.is_opened){
@@ -97,7 +116,7 @@ angular
         close: function(reopen, callback){
           console.log('close');
           popup.is_opened = false;
-          $('.popup-container .wrapper>div').stop().animate({"margin-top":"100px", "opacity": 0}, popup.transition_duration, function(){
+          $('.popup-container .wrapper>div').stop().animate({"margin-top":"60px", "opacity": 0}, popup.transition_duration, function(){
             if(!reopen){
               $('.popup-container').stop().animate({opacity:0}, popup.transition_duration, function(){
                 $('.popup-container').css({display:"none"});
@@ -114,31 +133,11 @@ angular
           });
         },
         update: function(href, callback){
-          console.log('update');
           var temp_html = $(href).html();
-          $('.popup-container .wrapper>div').html(temp_html).removeClass().addClass(href.replace('#',''));
-          cboxAction();
+          $('.popup-container .wrapper>div').css('display','none');
+          $('.popup-container '+href).css('display','block');
           callback();
         }
-      }
-
-
-      function cboxAction(){
-        $(".cbox-html").unbind("click").bind("click", function(e){
-          e.preventDefault();
-          var href = $(this).attr('href');
-          if(!popup.is_opened){
-            popup.update(href, function(){
-              popup.open();
-            });
-          }else{
-            popup.close(true, function(){
-              popup.update(href, function(){
-                popup.open();
-              });
-            });
-          }
-        }); 
       }
 
       // $('.popup-container').click(function(e){

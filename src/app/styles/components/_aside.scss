@@ -37,6 +37,10 @@ aside{
           font-weight:300;
           padding-left:17px;
           font-size: 0.875rem;
+          height: 100%;
+          width: 100%;
+          display: block;
+          box-sizing: border-box;
         }
       }
       section{

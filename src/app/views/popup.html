@@ -1,24 +1,22 @@
     <div class="popup-container" ng-click="closePopup()">
         <div class="wrapper">
-            <div ng-click="$event.stopPropagation()"></div>
+            <div ng-click="$event.stopPropagation()" class="popup-wrapper" id="popup-login">
+                <span class="basic-title">Connexion</span>
+                <form data-ng-submit="login()" action="javascript:;">
+                    <input type="email" name="login" class="email" placeholder="Login" data-ng-model="user.email"/>
+                    <input type="password" class="password" name="password" placeholder="Password" data-ng-model="user.password"/>
+                    <input type="submit" value="se connecter"/>
+                </form>
+            </div>
+            <div ng-click="$event.stopPropagation()" class="popup-wrapper" id="popup-register">
+                <span class="basic-title">Inscription</span>
+                <form data-ng-submit="register()">
+                    <input type="text" name="firstName" placeholder="Prénom" data-ng-model="user_register.firstName"/>
+                    <input type="text" name="lastName" placeholder="Nom" data-ng-model="user_register.lastName"/>
+                    <input type="email" name="login" placeholder="Email" data-ng-model="user_register.email"/>
+                    <input type="password" name="password" placeholder="Mot de passe" data-ng-model="user_register.password"/>
+                    <input type="submit" value="Créer un compte"/>
+                </form>
+            </div>
         </div>
-    </div>
-    
-    <div class="popup-wrapper" id="popup-login">
-        <span class="basic-title">Connexion</span>
-        <form data-ng-submit="login()" action="javascript:;">
-            <input type="email" name="login" class="email" placeholder="Login" data-ng-model="user.email"/>
-            <input type="password" class="password" name="password" placeholder="Password" data-ng-model="user.password"/>
-            <input type="submit" value="se connecter" />
-        </form>
-    </div>
-
-
-    <div class="popup-wrapper" id="popup-register">
-        <span class="basic-title">Inscription</span>
-        <form data-ng-submit="register()">
-            <input type="email" name="login" class="email" placeholder="login" data-ng-model="user.email"/>
-            <input type="password" class="password" name="password" placeholder="password" data-ng-model="user.password"/>
-            <input type="submit" value="Créer un compte"/>
-        </form>
     </div>

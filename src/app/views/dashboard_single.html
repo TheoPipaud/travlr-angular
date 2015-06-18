@@ -1,31 +1,31 @@
 <div id="single">
 	<header id="nav-bar" class="clearfix" ng-if="!isLogged" ng-include="'views/header.html'" ng-controller="headerCtrl"></header>
 	<header id="nav-bar" class="clearfix" ng-if="isLogged" ng-include="'views/header_logged.html'" ng-controller="headerCtrl"></header>
-	<section class="sct1" style="background-image:url({{activity.image}})">
+	<section class="sct1" style="background-image:url({{post_single.image}})">
 	</section>
     <section class="sct2">
     	<div class="container">
     		<div class="top">
-    			<h1 class="title basic-title">{{activity.title}}</h1>
-    			<h2 class="place">- {{activity.city}}, {{activity.country}}</h2>
+    			<h1 class="title basic-title">{{post_single.title}}</h1>
+    			<h2 class="place">- {{post_single.city}}, {{post_single.country}}</h2>
     		</div>
     		<div class="other-info">
 				<img src="https://d2y7at0phqmw80.cloudfront.net/img/default_avatar.png" class="profil-pict" alt="">
-				<h4 class="subtitle">Organisé par {{activity.owner.firstName}}</h4>
+				<h4 class="subtitle">Organisé par {{post_single.owner.firstName}}</h4>
 				<div class="rate">
 					<img src="images/temp/stars.jpg" alt="" class="stars">
 					<span class="reco">- 23 recommendations</span>
 				</div>
-				<a href="" class="btn-contact">Contacter {{activity.owner.firstName}}</a>
+				<a href="" class="btn-contact">Contacter {{post_single.owner.firstName}}</a>
 			</div>
 			<div class="quantity">
-				<span class="price">{{activity.price}}€</span>
-				<span class="nb-places">{{activity.maxPersons}} places dont {{activity.leftSlots}} disponibles</span>
+				<span class="price">{{post_single.price}}€</span>
+				<span class="nb-places">{{post_single.maxPersons}} places dont {{post_single.leftSlots}} disponibles</span>
 			</div>
 			<div class="sidebar">
 				<img src="images/temp/calendar.png" class="calendar" alt="">
 		    	<ul class="posts-list clearfix container">
-					<li ng-repeat="post in posts | limitTo:2" ng-include="'views/post.html'"></li>
+					<li ng-repeat="post in posts_feed | limitTo:2" ng-include="'views/post.html'"></li>
 				</ul>
 		    </div>
     	</div>
@@ -33,7 +33,7 @@
     <section class="sct3">
     	<div class="container">
     		<h2 class="basic-title">Description</h2>
-    		<p class="desc">{{activity.content}}</p>
+    		<p class="desc">{{post_single.content}}</p>
     		<h2 class="basic-title">Services inclus</h2>
     		<ul class="pack">
     			<li><img src="images/icons/valid.png" alt="">Transport</li>

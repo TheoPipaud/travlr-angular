@@ -10,11 +10,11 @@ angular
         '$scope', '$http',
         function($scope, $http) {
 
-            $scope.posts = [];
+            $scope.posts_feed = [];
             
             $http.get(config.api_url+'/post/feed').then(function(response) {
-				console.log(response.data);
-				$scope.posts = response.data;
+                console.log(response.data);
+				$scope.posts_feed = response.data;
 			}, function(err) {
 				return console.log(err);
 			});

@@ -11,5 +11,7 @@ angular.module('moviesapp', [
   'moviesapp.controllers.activity',
   'moviesapp.controllers.general',
   'moviesapp.controllers.chat',
+  'moviesapp.controllers.search',
+  'moviesapp.controllers.sidebar',
   'app.interceptors.auth'
 ]);
