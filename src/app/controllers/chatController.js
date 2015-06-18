@@ -42,7 +42,9 @@ angular
 
       $sailsSocket.subscribe('message', function(event) {
         $scope.messages.push(event);
-        $('.feed').scrollTop($('.feed')[0].scrollHeight);
+        setTimeout(function(){
+          $('.feed').scrollTop($('.feed')[0].scrollHeight);
+        }, 100);
       });
 
 
