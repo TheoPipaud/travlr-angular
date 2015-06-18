@@ -41,8 +41,8 @@ angular
 
 
       $sailsSocket.subscribe('message', function(event) {
-        console.log('got msg');
-          $scope.messages.push(event);
+        $scope.messages.push(event);
+        $('.feed').scrollTop($('.feed')[0].scrollHeight);
       });
 
 
