@@ -4,7 +4,7 @@
 'use strict';
 
 angular
-  .module('moviesapp.controllers.login', [])
+  .module('travlrapp.controllers.login', [])
   .controller('loginCtrl', [
     '$scope', '$http', '$state',
     function($scope, $http, $state) {

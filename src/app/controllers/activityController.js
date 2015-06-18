@@ -4,7 +4,7 @@
 'use strict';
 
 angular
-  .module('moviesapp.controllers.activity', [])
+  .module('travlrapp.controllers.activity', [])
   .controller('activityCtrl', [
     '$scope', '$http', '$state',
     function($scope, $http, $state) {

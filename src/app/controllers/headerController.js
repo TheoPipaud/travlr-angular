@@ -4,7 +4,7 @@
 'use strict';
 
 angular
-    .module('moviesapp.controllers.header', [])
+    .module('travlrapp.controllers.header', [])
     .controller('headerCtrl', [
         '$scope',
         function($scope) {

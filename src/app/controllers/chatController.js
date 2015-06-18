@@ -4,7 +4,7 @@
 'use strict';
 
 angular
-  .module('moviesapp.controllers.chat', [])
+  .module('travlrapp.controllers.chat', [])
   .controller('chatCtrl', [
     '$scope', '$http', '$stateParams', '$sailsSocket',
     function($scope, $http, $stateParams, $sailsSocket) {

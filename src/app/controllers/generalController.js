@@ -4,7 +4,7 @@
 'use strict';
 
 angular
-  .module('moviesapp.controllers.general', [])
+  .module('travlrapp.controllers.general', [])
   .controller('generalCtrl', [
     '$scope', '$state', '$http',
     function($scope, $state, $http) {
@@ -33,7 +33,7 @@ angular
                 $state.go('dashboard');
 
       		}, function(err){
-      			console.log(err);
+      			alert('Email ou mot de passe invalide')
       		})
       };
 
@@ -56,7 +56,7 @@ angular
                 console.log(err);
               })
           }, function(err){
-            console.log(err);
+            alert('Veuillez compléter tous les champs !')
           })
       };
       

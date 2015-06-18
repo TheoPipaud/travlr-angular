@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-    .module('moviesapp.controllers.sidebar', [])
+    .module('travlrapp.controllers.sidebar', [])
     .controller('sidebarCtrl', [
         '$scope', '$http',
         function($scope, $http) {

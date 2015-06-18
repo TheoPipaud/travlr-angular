@@ -4,14 +4,14 @@
 'use strict';
 
 angular
-  .module('moviesapp.controllers.dashboard', [])
+  .module('travlrapp.controllers.dashboard', [])
   .controller('dashboardCtrl', [
     '$scope', '$http', '$sailsSocket',
     function($scope, $http, $sailsSocket) {
     	$scope.posts_perso = [];
     	   
     	$http
-          .get(config.api_url + '/post')
+          .get(config.api_url + '/post?populate=owner')
           .then(function(response) {
             $scope.posts_perso = response.data;
           }, function(err) {

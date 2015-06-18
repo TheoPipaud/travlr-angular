@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-    .module('moviesapp.controllers.search', [])
+    .module('travlrapp.controllers.search', [])
     .controller('searchCtrl', [
         '$scope', '$http',
         function($scope, $http) {

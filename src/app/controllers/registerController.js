@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-    .module('moviesapp.controllers.register', [])
+    .module('travlrapp.controllers.register', [])
     .controller('registerCtrl', [
         '$scope', '$http',
         function($scope, $http) {

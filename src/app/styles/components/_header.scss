@@ -16,9 +16,12 @@
     a{
       font-weight: 300;
       font-size: 1.625rem;
-      letter-spacing: 7px;
+      letter-spacing: 3px;
       text-transform: uppercase;
       text-decoration: none;
+      span{
+        font-weight: 600;
+      }
     }
   }
   .right{
@@ -70,8 +73,11 @@
         a{
           display: block;
           background: $blue-deep;
-          padding: 2px 20px;
+          padding: 0px 20px;
+          height: 38px;
+          line-height: 38px;
           font-weight: 400;
+          color:rgb(118, 134, 153);
           &:hover{
             background: $blue-deep-hover;
             color: white;
@@ -116,6 +122,7 @@
       }
       .wrapper a{
         background: rgba(255,255,255,0.1);
+        color: white;
         &:hover{
           background: rgba(255,255,255,0.2);
         }
